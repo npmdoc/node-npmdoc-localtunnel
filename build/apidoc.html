@@ -1,0 +1,842 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/localtunnel/localtunnel#readme"
+
+    >localtunnel (v1.8.2)</a>
+</h1>
+<h4>expose localhost to the world</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.localtunnel">module localtunnel</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.localtunnel.HeaderHostTransformer">
+            function <span class="apidocSignatureSpan">localtunnel.</span>HeaderHostTransformer
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.localtunnel.Tunnel">
+            function <span class="apidocSignatureSpan">localtunnel.</span>Tunnel
+            <span class="apidocSignatureSpan">(opt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.localtunnel.TunnelCluster">
+            function <span class="apidocSignatureSpan">localtunnel.</span>TunnelCluster
+            <span class="apidocSignatureSpan">(opt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">localtunnel.</span>HeaderHostTransformer.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">localtunnel.</span>Tunnel.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">localtunnel.</span>TunnelCluster.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.localtunnel.HeaderHostTransformer">module localtunnel.HeaderHostTransformer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.localtunnel.HeaderHostTransformer.HeaderHostTransformer">
+            function <span class="apidocSignatureSpan">localtunnel.</span>HeaderHostTransformer
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.localtunnel.HeaderHostTransformer.super_">
+            function <span class="apidocSignatureSpan">localtunnel.HeaderHostTransformer.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.localtunnel.HeaderHostTransformer.prototype">module localtunnel.HeaderHostTransformer.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.localtunnel.HeaderHostTransformer.prototype._transform">
+            function <span class="apidocSignatureSpan">localtunnel.HeaderHostTransformer.prototype.</span>_transform
+            <span class="apidocSignatureSpan">(chunk, enc, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.localtunnel.Tunnel">module localtunnel.Tunnel</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.localtunnel.Tunnel.Tunnel">
+            function <span class="apidocSignatureSpan">localtunnel.</span>Tunnel
+            <span class="apidocSignatureSpan">(opt)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.localtunnel.Tunnel.prototype">module localtunnel.Tunnel.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.localtunnel.Tunnel.prototype._establish">
+            function <span class="apidocSignatureSpan">localtunnel.Tunnel.prototype.</span>_establish
+            <span class="apidocSignatureSpan">(info)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.localtunnel.Tunnel.prototype._init">
+            function <span class="apidocSignatureSpan">localtunnel.Tunnel.prototype.</span>_init
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.localtunnel.Tunnel.prototype.close">
+            function <span class="apidocSignatureSpan">localtunnel.Tunnel.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.localtunnel.Tunnel.prototype.open">
+            function <span class="apidocSignatureSpan">localtunnel.Tunnel.prototype.</span>open
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.localtunnel.TunnelCluster">module localtunnel.TunnelCluster</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.localtunnel.TunnelCluster.TunnelCluster">
+            function <span class="apidocSignatureSpan">localtunnel.</span>TunnelCluster
+            <span class="apidocSignatureSpan">(opt)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.localtunnel.TunnelCluster.prototype">module localtunnel.TunnelCluster.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.localtunnel.TunnelCluster.prototype.open">
+            function <span class="apidocSignatureSpan">localtunnel.TunnelCluster.prototype.</span>open
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.localtunnel" id="apidoc.module.localtunnel">module localtunnel</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.localtunnel.HeaderHostTransformer" id="apidoc.element.localtunnel.HeaderHostTransformer">
+        function <span class="apidocSignatureSpan">localtunnel.</span>HeaderHostTransformer
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">HeaderHostTransformer = function (opts) {
+    if (!(this instanceof HeaderHostTransformer)) {
+        return new HeaderHostTransformer(opts);
+    }
+
+    opts = opts || {}
+    Transform.call(this, opts);
+
+    var self = this;
+    self.host = opts.host || &#x27;localhost&#x27;;
+    self.replaced = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.localtunnel.Tunnel" id="apidoc.element.localtunnel.Tunnel">
+        function <span class="apidocSignatureSpan">localtunnel.</span>Tunnel
+        <span class="apidocSignatureSpan">(opt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Tunnel = function (opt) {
+    if (!(this instanceof Tunnel)) {
+        return new Tunnel(opt);
+    }
+
+    var self = this;
+    self._closed = false;
+    self._opt = opt || {};
+
+    self._opt.host = self._opt.host || &#x27;https://localtunnel.me&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.localtunnel.TunnelCluster" id="apidoc.element.localtunnel.TunnelCluster">
+        function <span class="apidocSignatureSpan">localtunnel.</span>TunnelCluster
+        <span class="apidocSignatureSpan">(opt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">TunnelCluster = function (opt) {
+    if (!(this instanceof TunnelCluster)) {
+        return new TunnelCluster(opt);
+    }
+
+    var self = this;
+    self._opt = opt;
+
+    EventEmitter.call(self);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.localtunnel.HeaderHostTransformer" id="apidoc.module.localtunnel.HeaderHostTransformer">module localtunnel.HeaderHostTransformer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.localtunnel.HeaderHostTransformer.HeaderHostTransformer" id="apidoc.element.localtunnel.HeaderHostTransformer.HeaderHostTransformer">
+        function <span class="apidocSignatureSpan">localtunnel.</span>HeaderHostTransformer
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">HeaderHostTransformer = function (opts) {
+    if (!(this instanceof HeaderHostTransformer)) {
+        return new HeaderHostTransformer(opts);
+    }
+
+    opts = opts || {}
+    Transform.call(this, opts);
+
+    var self = this;
+    self.host = opts.host || &#x27;localhost&#x27;;
+    self.replaced = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.localtunnel.HeaderHostTransformer.super_" id="apidoc.element.localtunnel.HeaderHostTransformer.super_">
+        function <span class="apidocSignatureSpan">localtunnel.HeaderHostTransformer.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Transform(options) {
+  if (!(this instanceof Transform))
+    return new Transform(options);
+
+  Duplex.call(this, options);
+
+  this._transformState = new TransformState(this);
+
+  var stream = this;
+
+  // start out asking for a readable event once data is transformed.
+  this._readableState.needReadable = true;
+
+  // we have implemented the _read method, and done the other things
+  // that Readable wants before the first _read call, so unset the
+  // sync guard flag.
+  this._readableState.sync = false;
+
+  if (options) {
+    if (typeof options.transform === &#x27;function&#x27;)
+      this._transform = options.transform;
+
+    if (typeof options.flush === &#x27;function&#x27;)
+      this._flush = options.flush;
+  }
+
+  // When the writable side finishes, then flush out anything remaining.
+  this.once(&#x27;prefinish&#x27;, function() {
+    if (typeof this._flush === &#x27;function&#x27;)
+      this._flush(function(er) {
+        done(stream, er);
+      });
+    else
+      done(stream);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.localtunnel.HeaderHostTransformer.prototype" id="apidoc.module.localtunnel.HeaderHostTransformer.prototype">module localtunnel.HeaderHostTransformer.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.localtunnel.HeaderHostTransformer.prototype._transform" id="apidoc.element.localtunnel.HeaderHostTransformer.prototype._transform">
+        function <span class="apidocSignatureSpan">localtunnel.HeaderHostTransformer.prototype.</span>_transform
+        <span class="apidocSignatureSpan">(chunk, enc, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_transform = function (chunk, enc, cb) {
+    var self = this;
+
+    // after replacing the first instance of the Host header
+    // we just become a regular passthrough
+    if (!self.replaced) {
+        chunk = chunk.toString();
+        self.push(chunk.replace(/(\r\n[Hh]ost: )\S+/, function(match, $1) {
+            self.replaced = true;
+            return $1 + self.host;
+        }));
+    }
+    else {
+        self.push(chunk);
+    }
+
+    cb();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.localtunnel.Tunnel" id="apidoc.module.localtunnel.Tunnel">module localtunnel.Tunnel</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.localtunnel.Tunnel.Tunnel" id="apidoc.element.localtunnel.Tunnel.Tunnel">
+        function <span class="apidocSignatureSpan">localtunnel.</span>Tunnel
+        <span class="apidocSignatureSpan">(opt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Tunnel = function (opt) {
+    if (!(this instanceof Tunnel)) {
+        return new Tunnel(opt);
+    }
+
+    var self = this;
+    self._closed = false;
+    self._opt = opt || {};
+
+    self._opt.host = self._opt.host || &#x27;https://localtunnel.me&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.localtunnel.Tunnel.prototype" id="apidoc.module.localtunnel.Tunnel.prototype">module localtunnel.Tunnel.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.localtunnel.Tunnel.prototype._establish" id="apidoc.element.localtunnel.Tunnel.prototype._establish">
+        function <span class="apidocSignatureSpan">localtunnel.Tunnel.prototype.</span>_establish
+        <span class="apidocSignatureSpan">(info)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_establish = function (info) {
+    var self = this;
+    var opt = self._opt;
+
+    // increase max event listeners so that localtunnel consumers don&#x27;t get
+    // warning messages as soon as they setup even one listener. See #71
+    self.setMaxListeners(info.max_conn + (EventEmitter.defaultMaxListeners || 10));
+
+    info.local_host = opt.local_host;
+    info.local_port = opt.port;
+
+    var tunnels = self.tunnel_cluster = TunnelCluster(info);
+
+    // only emit the url the first time
+    tunnels.once(&#x27;open&#x27;, function() {
+        self.emit(&#x27;url&#x27;, info.url);
+    });
+
+    // re-emit socket error
+    tunnels.on(&#x27;error&#x27;, function(err) {
+        self.emit(&#x27;error&#x27;, err);
+    });
+
+    var tunnel_count = 0;
+
+    // track open count
+    tunnels.on(&#x27;open&#x27;, function(tunnel) {
+        tunnel_count++;
+        debug(&#x27;tunnel open [total: %d]&#x27;, tunnel_count);
+
+        var close_handler = function() {
+            tunnel.destroy();
+        };
+
+        if (self._closed) {
+            return close_handler();
+        }
+
+        self.once(&#x27;close&#x27;, close_handler);
+        tunnel.once(&#x27;close&#x27;, function() {
+            self.removeListener(&#x27;close&#x27;, close_handler);
+        });
+    });
+
+    // when a tunnel dies, open a new one
+    tunnels.on(&#x27;dead&#x27;, function(tunnel) {
+        tunnel_count--;
+        debug(&#x27;tunnel dead [total: %d]&#x27;, tunnel_count);
+
+        if (self._closed) {
+            return;
+        }
+
+        tunnels.open();
+    });
+
+    // establish as many tunnels as allowed
+    for (var count = 0 ; count &#x3c; info.max_conn ; ++count) {
+        tunnels.open();
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+self._init(function(err, info) {
+    if (err) {
+        return cb(err);
+    }
+
+    self.url = info.url;
+    self.<span class="apidocCodeKeywordSpan">_establish</span>(info);
+    cb();
+});
+};
+
+// shutdown tunnels
+Tunnel.prototype.close = function() {
+var self = this;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.localtunnel.Tunnel.prototype._init" id="apidoc.element.localtunnel.Tunnel.prototype._init">
+        function <span class="apidocSignatureSpan">localtunnel.Tunnel.prototype.</span>_init
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_init = function (cb) {
+    var self = this;
+    var opt = self._opt;
+
+    var params = {
+        path: &#x27;/&#x27;,
+        json: true
+    };
+
+    var base_uri = opt.host + &#x27;/&#x27;;
+
+    // optionally override the upstream server
+    var upstream = url.parse(opt.host);
+
+    // no subdomain at first, maybe use requested domain
+    var assigned_domain = opt.subdomain;
+
+    // where to quest
+    params.uri = base_uri + ((assigned_domain) ? assigned_domain : &#x27;?new&#x27;);
+
+    (function get_url() {
+        request(params, function(err, res, body) {
+            if (err) {
+                // TODO (shtylman) don&#x27;t print to stdout?
+                console.log(&#x27;tunnel server offline: &#x27; + err.message + &#x27;, retry 1s&#x27;);
+                return setTimeout(get_url, 1000);
+            }
+
+            if (res.statusCode !== 200) {
+                var err = new Error((body &#x26;&#x26; body.message) || &#x27;localtunnel server returned an error, please try again&#x27;);
+                return cb(err);
+            }
+
+            var port = body.port;
+            var host = upstream.hostname;
+
+            var max_conn = body.max_conn_count || 1;
+
+            cb(null, {
+                remote_host: upstream.hostname,
+                remote_port: body.port,
+                name: body.id,
+                url: body.url,
+                max_conn: max_conn
+            });
+        });
+    })();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+tunnels.open();
+    }
+};
+
+Tunnel.prototype.open = function(cb) {
+    var self = this;
+
+    self.<span class="apidocCodeKeywordSpan">_init</span>(function(err, info) {
+if (err) {
+    return cb(err);
+}
+
+self.url = info.url;
+self._establish(info);
+cb();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.localtunnel.Tunnel.prototype.close" id="apidoc.element.localtunnel.Tunnel.prototype.close">
+        function <span class="apidocSignatureSpan">localtunnel.Tunnel.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function () {
+    var self = this;
+
+    self._closed = true;
+    self.emit(&#x27;close&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.localtunnel.Tunnel.prototype.open" id="apidoc.element.localtunnel.Tunnel.prototype.open">
+        function <span class="apidocSignatureSpan">localtunnel.Tunnel.prototype.</span>open
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">open = function (cb) {
+    var self = this;
+
+    self._init(function(err, info) {
+        if (err) {
+            return cb(err);
+        }
+
+        self.url = info.url;
+        self._establish(info);
+        cb();
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        tunnel_count--;
+        debug(&#x27;tunnel dead [total: %d]&#x27;, tunnel_count);
+
+        if (self._closed) {
+            return;
+        }
+
+        tunnels.<span class="apidocCodeKeywordSpan">open</span>();
+    });
+
+    // establish as many tunnels as allowed
+    for (var count = 0 ; count &#x3c; info.max_conn ; ++count) {
+        tunnels.open();
+    }
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.localtunnel.TunnelCluster" id="apidoc.module.localtunnel.TunnelCluster">module localtunnel.TunnelCluster</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.localtunnel.TunnelCluster.TunnelCluster" id="apidoc.element.localtunnel.TunnelCluster.TunnelCluster">
+        function <span class="apidocSignatureSpan">localtunnel.</span>TunnelCluster
+        <span class="apidocSignatureSpan">(opt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">TunnelCluster = function (opt) {
+    if (!(this instanceof TunnelCluster)) {
+        return new TunnelCluster(opt);
+    }
+
+    var self = this;
+    self._opt = opt;
+
+    EventEmitter.call(self);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.localtunnel.TunnelCluster.prototype" id="apidoc.module.localtunnel.TunnelCluster.prototype">module localtunnel.TunnelCluster.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.localtunnel.TunnelCluster.prototype.open" id="apidoc.element.localtunnel.TunnelCluster.prototype.open">
+        function <span class="apidocSignatureSpan">localtunnel.TunnelCluster.prototype.</span>open
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">open = function () {
+    var self = this;
+
+    var opt = self._opt || {};
+
+    var remote_host = opt.remote_host;
+    var remote_port = opt.remote_port;
+
+    var local_host = opt.local_host || &#x27;localhost&#x27;;
+    var local_port = opt.local_port;
+
+    debug(&#x27;establishing tunnel %s:%s &#x3c;&#x3e; %s:%s&#x27;, local_host, local_port, remote_host, remote_port);
+
+    // connection to localtunnel server
+    var remote = net.connect({
+        host: remote_host,
+        port: remote_port
+    });
+
+    remote.setKeepAlive(true);
+
+    remote.on(&#x27;error&#x27;, function(err) {
+        // emit connection refused errors immediately, because they
+        // indicate that the tunnel can&#x27;t be established.
+        if (err.code === &#x27;ECONNREFUSED&#x27;) {
+            self.emit(&#x27;error&#x27;, new Error(&#x27;connection refused: &#x27; + remote_host + &#x27;:&#x27; + remote_port + &#x27; (check your firewall settings
+)&#x27;));
+        }
+
+        remote.end();
+    });
+
+    function conn_local() {
+        if (remote.destroyed) {
+            debug(&#x27;remote destroyed&#x27;);
+            self.emit(&#x27;dead&#x27;);
+            return;
+        }
+
+        debug(&#x27;connecting locally to %s:%d&#x27;, local_host, local_port);
+        remote.pause();
+
+        // connection to local http server
+        var local = net.connect({
+            host: local_host,
+            port: local_port
+        });
+
+        function remote_close() {
+            debug(&#x27;remote close&#x27;);
+            self.emit(&#x27;dead&#x27;);
+            local.end();
+        };
+
+        remote.once(&#x27;close&#x27;, remote_close);
+
+        // TODO some languages have single threaded servers which makes opening up
+        // multiple local connections impossible. We need a smarter way to scale
+        // and adjust for such instances to avoid beating on the door of the server
+        local.once(&#x27;error&#x27;, function(err) {
+            debug(&#x27;local error %s&#x27;, err.message);
+            local.end();
+
+            remote.removeListener(&#x27;close&#x27;, remote_close);
+
+            if (err.code !== &#x27;ECONNREFUSED&#x27;) {
+                return remote.end();
+            }
+
+            // retrying connection to local server
+            setTimeout(conn_local, 1000);
+        });
+
+        local.once(&#x27;connect&#x27;, function() {
+            debug(&#x27;connected locally&#x27;);
+            remote.resume();
+
+            var stream = remote;
+
+            // if user requested specific local host
+            // then we use host header transform to replace the host header
+            if (opt.local_host) {
+                debug(&#x27;transform Host header to %s&#x27;, opt.local_host);
+                stream = remote.pipe(HeaderHostTransformer({ host: opt.local_host }));
+            }
+
+            stream.pipe(local).pipe(remote);
+
+            // when local closes, also get a new remote
+            local.once(&#x27;close&#x27;, function(had_error) {
+                debug(&#x27;local connection closed [%s]&#x27;, had_error);
+            });
+        });
+    }
+
+    // tunnel is considered open when remote connects
+    remote.once(&#x27;connect&#x27;, function() {
+        self.emit(&#x27;open&#x27;, remote);
+        conn_local();
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        tunnel_count--;
+        debug(&#x27;tunnel dead [total: %d]&#x27;, tunnel_count);
+
+        if (self._closed) {
+            return;
+        }
+
+        tunnels.<span class="apidocCodeKeywordSpan">open</span>();
+    });
+
+    // establish as many tunnels as allowed
+    for (var count = 0 ; count &#x3c; info.max_conn ; ++count) {
+        tunnels.open();
+    }
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
