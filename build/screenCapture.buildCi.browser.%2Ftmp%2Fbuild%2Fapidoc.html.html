@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/localtunnel/localtunnel#readme"
-
-    >localtunnel (v1.8.2)</a>
+    <a href="https://github.com/localtunnel/localtunnel#readme">localtunnel (v1.8.2)</a>
 </h1>
 <h4>expose localhost to the world</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.localtunnel">module localtunnel</a><ol>
 
@@ -276,7 +269,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function localtunnel(port, opt, fn) {
-    if (typeof opt === &#x27;function&#x27;) {
+    if (typeof opt === 'function') {
         fn = opt;
         opt = {};
     }
@@ -311,11 +304,11 @@
         return new HeaderHostTransformer(opts);
     }
 
-    opts = opts || {}
+    opts = opts ||Â&nbsp;{}
     Transform.call(this, opts);
 
     var self = this;
-    self.host = opts.host || &#x27;localhost&#x27;;
+    self.host = opts.host || 'localhost';
     self.replaced = false;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -339,7 +332,7 @@
     self._closed = false;
     self._opt = opt || {};
 
-    self._opt.host = self._opt.host || &#x27;https://localtunnel.me&#x27;;
+    self._opt.host = self._opt.host || 'https://localtunnel.me';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -376,7 +369,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function localtunnel(port, opt, fn) {
-    if (typeof opt === &#x27;function&#x27;) {
+    if (typeof opt === 'function') {
         fn = opt;
         opt = {};
     }
@@ -453,11 +446,11 @@ else {
         return new HeaderHostTransformer(opts);
     }
 
-    opts = opts || {}
+    opts = opts ||Â&nbsp;{}
     Transform.call(this, opts);
 
     var self = this;
-    self.host = opts.host || &#x27;localhost&#x27;;
+    self.host = opts.host || 'localhost';
     self.replaced = false;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -491,16 +484,16 @@ else {
   this._readableState.sync = false;
 
   if (options) {
-    if (typeof options.transform === &#x27;function&#x27;)
+    if (typeof options.transform === 'function')
       this._transform = options.transform;
 
-    if (typeof options.flush === &#x27;function&#x27;)
+    if (typeof options.flush === 'function')
       this._flush = options.flush;
   }
 
   // When the writable side finishes, then flush out anything remaining.
-  this.once(&#x27;prefinish&#x27;, function() {
-    if (typeof this._flush === &#x27;function&#x27;)
+  this.once('prefinish', function() {
+    if (typeof this._flush === 'function')
       this._flush(function(er) {
         done(stream, er);
       });
@@ -569,7 +562,7 @@ else {
     self._closed = false;
     self._opt = opt || {};
 
-    self._opt.host = self._opt.host || &#x27;https://localtunnel.me&#x27;;
+    self._opt.host = self._opt.host || 'https://localtunnel.me';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -592,7 +585,7 @@ else {
     var self = this;
     var opt = self._opt;
 
-    // increase max event listeners so that localtunnel consumers don&#x27;t get
+    // increase max event listeners so that localtunnel consumers don't get
     // warning messages as soon as they setup even one listener. See #71
     self.setMaxListeners(info.max_conn + (EventEmitter.defaultMaxListeners || 10));
 
@@ -602,21 +595,21 @@ else {
     var tunnels = self.tunnel_cluster = TunnelCluster(info);
 
     // only emit the url the first time
-    tunnels.once(&#x27;open&#x27;, function() {
-        self.emit(&#x27;url&#x27;, info.url);
+    tunnels.once('open', function() {
+        self.emit('url', info.url);
     });
 
     // re-emit socket error
-    tunnels.on(&#x27;error&#x27;, function(err) {
-        self.emit(&#x27;error&#x27;, err);
+    tunnels.on('error', function(err) {
+        self.emit('error', err);
     });
 
     var tunnel_count = 0;
 
     // track open count
-    tunnels.on(&#x27;open&#x27;, function(tunnel) {
+    tunnels.on('open', function(tunnel) {
         tunnel_count++;
-        debug(&#x27;tunnel open [total: %d]&#x27;, tunnel_count);
+        debug('tunnel open [total: %d]', tunnel_count);
 
         var close_handler = function() {
             tunnel.destroy();
@@ -626,16 +619,16 @@ else {
             return close_handler();
         }
 
-        self.once(&#x27;close&#x27;, close_handler);
-        tunnel.once(&#x27;close&#x27;, function() {
-            self.removeListener(&#x27;close&#x27;, close_handler);
+        self.once('close', close_handler);
+        tunnel.once('close', function() {
+            self.removeListener('close', close_handler);
         });
     });
 
     // when a tunnel dies, open a new one
-    tunnels.on(&#x27;dead&#x27;, function(tunnel) {
+    tunnels.on('dead', function(tunnel) {
         tunnel_count--;
-        debug(&#x27;tunnel dead [total: %d]&#x27;, tunnel_count);
+        debug('tunnel dead [total: %d]', tunnel_count);
 
         if (self._closed) {
             return;
@@ -645,7 +638,7 @@ else {
     });
 
     // establish as many tunnels as allowed
-    for (var count = 0 ; count &#x3c; info.max_conn ; ++count) {
+    for (var count = 0 ; count &lt; info.max_conn ; ++count) {
         tunnels.open();
     }
 }</pre></li>
@@ -682,11 +675,11 @@ var self = this;
     var opt = self._opt;
 
     var params = {
-        path: &#x27;/&#x27;,
+        path: '/',
         json: true
     };
 
-    var base_uri = opt.host + &#x27;/&#x27;;
+    var base_uri = opt.host + '/';
 
     // optionally override the upstream server
     var upstream = url.parse(opt.host);
@@ -695,18 +688,18 @@ var self = this;
     var assigned_domain = opt.subdomain;
 
     // where to quest
-    params.uri = base_uri + ((assigned_domain) ? assigned_domain : &#x27;?new&#x27;);
+    params.uri = base_uri + ((assigned_domain) ? assigned_domain : '?new');
 
     (function get_url() {
         request(params, function(err, res, body) {
             if (err) {
-                // TODO (shtylman) don&#x27;t print to stdout?
-                console.log(&#x27;tunnel server offline: &#x27; + err.message + &#x27;, retry 1s&#x27;);
+                // TODO (shtylman) don't print to stdout?
+                console.log('tunnel server offline: ' + err.message + ', retry 1s');
                 return setTimeout(get_url, 1000);
             }
 
             if (res.statusCode !== 200) {
-                var err = new Error((body &#x26;&#x26; body.message) || &#x27;localtunnel server returned an error, please try again&#x27;);
+                var err = new Error((body &amp;&amp; body.message) || 'localtunnel server returned an error, please try again');
                 return cb(err);
             }
 
@@ -757,7 +750,7 @@ cb();
     var self = this;
 
     self._closed = true;
-    self.emit(&#x27;close&#x27;);
+    self.emit('close');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -786,7 +779,7 @@ cb();
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
         tunnel_count--;
-        debug(&#x27;tunnel dead [total: %d]&#x27;, tunnel_count);
+        debug('tunnel dead [total: %d]', tunnel_count);
 
         if (self._closed) {
             return;
@@ -796,7 +789,7 @@ cb();
     });
 
     // establish as many tunnels as allowed
-    for (var count = 0 ; count &#x3c; info.max_conn ; ++count) {
+    for (var count = 0 ; count &lt; info.max_conn ; ++count) {
         tunnels.open();
     }
 };
@@ -852,10 +845,10 @@ cb();
     var remote_host = opt.remote_host;
     var remote_port = opt.remote_port;
 
-    var local_host = opt.local_host || &#x27;localhost&#x27;;
+    var local_host = opt.local_host || 'localhost';
     var local_port = opt.local_port;
 
-    debug(&#x27;establishing tunnel %s:%s &#x3c;&#x3e; %s:%s&#x27;, local_host, local_port, remote_host, remote_port);
+    debug('establishing tunnel %s:%s &lt;&gt; %s:%s', local_host, local_port, remote_host, remote_port);
 
     // connection to localtunnel server
     var remote = net.connect({
@@ -865,12 +858,12 @@ cb();
 
     remote.setKeepAlive(true);
 
-    remote.on(&#x27;error&#x27;, function(err) {
+    remote.on('error', function(err) {
         // emit connection refused errors immediately, because they
-        // indicate that the tunnel can&#x27;t be established.
-        if (err.code === &#x27;ECONNREFUSED&#x27;) {
-            self.emit(&#x27;error&#x27;, new Error(&#x27;connection refused: &#x27; + remote_host + &#x27;:&#x27; + remote_port + &#x27; (check your firewall settings
-)&#x27;));
+        // indicate that the tunnel can't be established.
+        if (err.code === 'ECONNREFUSED') {
+            self.emit('error', new Error('connection refused: ' + remote_host + ':' + remote_port + ' (check your firewall settings
+)'));
         }
 
         remote.end();
@@ -878,12 +871,12 @@ cb();
 
     function conn_local() {
         if (remote.destroyed) {
-            debug(&#x27;remote destroyed&#x27;);
-            self.emit(&#x27;dead&#x27;);
+            debug('remote destroyed');
+            self.emit('dead');
             return;
         }
 
-        debug(&#x27;connecting locally to %s:%d&#x27;, local_host, local_port);
+        debug('connecting locally to %s:%d', local_host, local_port);
         remote.pause();
 
         // connection to local http server
@@ -893,23 +886,23 @@ cb();
         });
 
         function remote_close() {
-            debug(&#x27;remote close&#x27;);
-            self.emit(&#x27;dead&#x27;);
+            debug('remote close');
+            self.emit('dead');
             local.end();
         };
 
-        remote.once(&#x27;close&#x27;, remote_close);
+        remote.once('close', remote_close);
 
         // TODO some languages have single threaded servers which makes opening up
         // multiple local connections impossible. We need a smarter way to scale
         // and adjust for such instances to avoid beating on the door of the server
-        local.once(&#x27;error&#x27;, function(err) {
-            debug(&#x27;local error %s&#x27;, err.message);
+        local.once('error', function(err) {
+            debug('local error %s', err.message);
             local.end();
 
-            remote.removeListener(&#x27;close&#x27;, remote_close);
+            remote.removeListener('close', remote_close);
 
-            if (err.code !== &#x27;ECONNREFUSED&#x27;) {
+            if (err.code !== 'ECONNREFUSED') {
                 return remote.end();
             }
 
@@ -917,8 +910,8 @@ cb();
             setTimeout(conn_local, 1000);
         });
 
-        local.once(&#x27;connect&#x27;, function() {
-            debug(&#x27;connected locally&#x27;);
+        local.once('connect', function() {
+            debug('connected locally');
             remote.resume();
 
             var stream = remote;
@@ -926,28 +919,28 @@ cb();
             // if user requested specific local host
             // then we use host header transform to replace the host header
             if (opt.local_host) {
-                debug(&#x27;transform Host header to %s&#x27;, opt.local_host);
+                debug('transform Host header to %s', opt.local_host);
                 stream = remote.pipe(HeaderHostTransformer({ host: opt.local_host }));
             }
 
             stream.pipe(local).pipe(remote);
 
             // when local closes, also get a new remote
-            local.once(&#x27;close&#x27;, function(had_error) {
-                debug(&#x27;local connection closed [%s]&#x27;, had_error);
+            local.once('close', function(had_error) {
+                debug('local connection closed [%s]', had_error);
             });
         });
     }
 
     // tunnel is considered open when remote connects
-    remote.once(&#x27;connect&#x27;, function() {
-        self.emit(&#x27;open&#x27;, remote);
+    remote.once('connect', function() {
+        self.emit('open', remote);
         conn_local();
     });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
         tunnel_count--;
-        debug(&#x27;tunnel dead [total: %d]&#x27;, tunnel_count);
+        debug('tunnel dead [total: %d]', tunnel_count);
 
         if (self._closed) {
             return;
@@ -957,7 +950,7 @@ cb();
     });
 
     // establish as many tunnels as allowed
-    for (var count = 0 ; count &#x3c; info.max_conn ; ++count) {
+    for (var count = 0 ; count &lt; info.max_conn ; ++count) {
         tunnels.open();
     }
 };
@@ -1007,3 +1000,4 @@ else {
     ]
 </div>
 </div>
+</body></html>
