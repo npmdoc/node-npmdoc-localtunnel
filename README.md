@@ -3,7 +3,9 @@
 
 [![NPM](https://nodei.co/npm/localtunnel.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/localtunnel)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-localtunnel/build/screenCapture.buildCi.browser.apidoc.html.png)](https://npmdoc.github.io/node-npmdoc-localtunnel/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-localtunnel/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-localtunnel/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-localtunnel/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-localtunnel/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-localtunnel/build/screenCapture.npmPackageListing.svg)
 
@@ -60,58 +62,6 @@
     },
     "version": "1.8.2"
 }
-```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module localtunnel](#apidoc.module.localtunnel)
-1.  [function <span class="apidocSignatureSpan"></span>localtunnel (port, opt, fn)](#apidoc.element.localtunnel.localtunnel)
-1.  [function <span class="apidocSignatureSpan">localtunnel.</span>toString ()](#apidoc.element.localtunnel.toString)
-
-
-
-# <a name="apidoc.module.localtunnel"></a>[module localtunnel](#apidoc.module.localtunnel)
-
-#### <a name="apidoc.element.localtunnel.localtunnel"></a>[function <span class="apidocSignatureSpan"></span>localtunnel (port, opt, fn)](#apidoc.element.localtunnel.localtunnel)
-- description and source-code
-```javascript
-function localtunnel(port, opt, fn) {
-    if (typeof opt === 'function') {
-        fn = opt;
-        opt = {};
-    }
-
-    opt = opt || {};
-    opt.port = port;
-
-    var client = Tunnel(opt);
-    client.open(function(err) {
-        if (err) {
-            return fn(err);
-        }
-
-        fn(null, client);
-    });
-    return client;
-}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.localtunnel.toString"></a>[function <span class="apidocSignatureSpan">localtunnel.</span>toString ()](#apidoc.element.localtunnel.toString)
-- description and source-code
-```javascript
-toString = function () {
-    return toString;
-}
-```
-- example usage
-```shell
-n/a
 ```
 
 
