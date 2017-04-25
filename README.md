@@ -1,4 +1,7 @@
-# api documentation for  [localtunnel (v1.8.2)](https://github.com/localtunnel/localtunnel#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-localtunnel.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-localtunnel) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-localtunnel.svg)](https://travis-ci.org/npmdoc/node-npmdoc-localtunnel)
+# npmdoc-localtunnel
+
+#### basic api documentation for  [localtunnel (v1.8.2)](https://github.com/localtunnel/localtunnel#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-localtunnel.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-localtunnel) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-localtunnel.svg)](https://travis-ci.org/npmdoc/node-npmdoc-localtunnel)
+
 #### expose localhost to the world
 
 [![NPM](https://nodei.co/npm/localtunnel.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/localtunnel)

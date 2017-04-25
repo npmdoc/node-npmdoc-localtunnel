@@ -1,7 +1,7 @@
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
     "buildNpmdoc": "localtunnel",
-    "description": "api documentation for [localtunnel (v1.8.2)](https://github.com/localtunnel/localtunnel#readme) [![npm package](https://img.shields.io/npm/v/npmdoc-localtunnel.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-localtunnel) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-localtunnel.svg)](https://travis-ci.org/npmdoc/node-npmdoc-localtunnel)",
+    "description": "#### basic api documentation for  [localtunnel (v1.8.2)](https://github.com/localtunnel/localtunnel#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-localtunnel.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-localtunnel) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-localtunnel.svg)](https://travis-ci.org/npmdoc/node-npmdoc-localtunnel)",
     "devDependencies": {
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
         "localtunnel": "*",
