@@ -92,24 +92,6 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.localtunnel.client">
-            function <span class="apidocSignatureSpan">localtunnel.</span>client
-            <span class="apidocSignatureSpan">(port, opt, fn)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.localtunnel.toString">
-            function <span class="apidocSignatureSpan">localtunnel.</span>toString
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
-        <li>
-
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">localtunnel.</span>HeaderHostTransformer.prototype</span>
 
         </li>
@@ -242,19 +224,6 @@
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.localtunnel.toString">module localtunnel.toString</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.localtunnel.toString.toString">
-            function <span class="apidocSignatureSpan">localtunnel.</span>toString
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
 </ol></div>
 
 <div class="apidocSectionDiv">
@@ -357,68 +326,6 @@
     EventEmitter.call(self);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.localtunnel.client" id="apidoc.element.localtunnel.client">
-        function <span class="apidocSignatureSpan">localtunnel.</span>client
-        <span class="apidocSignatureSpan">(port, opt, fn)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function localtunnel(port, opt, fn) {
-    if (typeof opt === 'function') {
-        fn = opt;
-        opt = {};
-    }
-
-    opt = opt || {};
-    opt.port = port;
-
-    var client = Tunnel(opt);
-    client.open(function(err) {
-        if (err) {
-            return fn(err);
-        }
-
-        fn(null, client);
-    });
-    return client;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.localtunnel.toString" id="apidoc.element.localtunnel.toString">
-        function <span class="apidocSignatureSpan">localtunnel.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return text;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-HeaderHostTransformer.prototype._transform = function (chunk, enc, cb) {
-var self = this;
-
-// after replacing the first instance of the Host header
-// we just become a regular passthrough
-if (!self.replaced) {
-    chunk = chunk.<span class="apidocCodeKeywordSpan">toString</span>();
-    self.push(chunk.replace(/(\r\n[Hh]ost: )\S+/, function(match, $1) {
-        self.replaced = true;
-        return $1 + self.host;
-    }));
-}
-else {
-    self.push(chunk);
-...</pre></li>
     </ul>
 
 
@@ -954,40 +861,6 @@ cb();
         tunnels.open();
     }
 };
-...</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.localtunnel.toString" id="apidoc.module.localtunnel.toString">module localtunnel.toString</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.localtunnel.toString.toString" id="apidoc.element.localtunnel.toString.toString">
-        function <span class="apidocSignatureSpan">localtunnel.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-HeaderHostTransformer.prototype._transform = function (chunk, enc, cb) {
-var self = this;
-
-// after replacing the first instance of the Host header
-// we just become a regular passthrough
-if (!self.replaced) {
-    chunk = chunk.<span class="apidocCodeKeywordSpan">toString</span>();
-    self.push(chunk.replace(/(\r\n[Hh]ost: )\S+/, function(match, $1) {
-        self.replaced = true;
-        return $1 + self.host;
-    }));
-}
-else {
-    self.push(chunk);
 ...</pre></li>
     </ul>
 
